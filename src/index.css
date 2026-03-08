@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Geist+Sans:wght@100..900&family=Geist+Mono:wght@100..900&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&display=swap');
+
+@layer base {
+    body {
+        font-family: 'Geist Sans', 'Inter', sans-serif;
+        @apply text-slate-800 bg-white;
+    }
+
+    .subtitle-script {
+        @apply font-serif italic text-primary text-xl md:text-2xl;
+    }
+}
+
+.glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+}
+
+.btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded-md font-medium transition-all hover:bg-primary/90 hover:shadow-lg active:scale-95;
+}
+
+.btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded-md font-medium transition-all hover:bg-primary hover:text-white active:scale-95;
+}
