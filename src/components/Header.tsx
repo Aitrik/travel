@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Search, MapPin, Calendar, Filter, ChevronLeft, ChevronRight, Star, Clock, Play } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Search, MapPin, ChevronLeft, ChevronRight, Star, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const Navbar = () => {
@@ -153,7 +153,7 @@ export const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10 text-white">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl flex flex-col items-center md:items-start">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
@@ -161,28 +161,29 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-center md:items-start"
             >
               {/* Floating Tag */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center  gap-2 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary-light text-sm font-semibold mb-6"
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 text-primary-light text-sm font-semibold mb-6 mx-auto md:mx-0"
               >
                 <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
                 {carouselData[currentSlide].tag}
               </motion.div>
 
-              <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 tracking-tight">
+              <h1 className="text-4xl md:text-7xl font-bold leading-[1.1] mb-6 tracking-tight text-center md:text-left">
                 {carouselData[currentSlide].title}
               </h1>
 
-              <p className="text-lg md:text-xl mb-8 opacity-80 leading-relaxed max-w-2xl font-light">
+              <p className="text-lg md:text-xl mb-8 opacity-80 leading-relaxed max-w-2xl font-light text-center md:text-left mx-auto md:mx-0">
                 {carouselData[currentSlide].description}
               </p>
 
               {/* Metadata Cluster */}
-              <div className="flex flex-wrap gap-6 mb-12">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 mb-12">
                 <div className="flex items-center gap-2">
                   <div className="p-2 bg-white/10 rounded-lg backdrop-blur-sm">
                     <Clock className="w-4 h-4 text-primary" />

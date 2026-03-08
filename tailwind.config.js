@@ -9,7 +9,10 @@ export default {
         serif: ['Cormorant Garamond', 'serif'],
       },
       colors: {
-        primary: '#0EA5E9',
+        primary: {
+          DEFAULT: '#0EA5E9',
+          light: '#7dd3fc',
+        },
         secondary: '#002b5b', // Premium Deep Navy
         accent: '#F97316',
         navy: {
